@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 TMU-CWRU Symposium on Cancer Translational Research</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #0056b3;
+        }
+        
+        h1, h2, h3, h4 {
+            margin-bottom: 15px;
+            color: #003366;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        section {
+            padding: 60px 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: #003366;
+            color: white;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo h1 {
+            font-size: 18px;
+            margin: 0;
+            color: white;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            color: white;
+            font-weight: 600;
+            padding: 5px 10px;
+            transition: all 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            color: #66ccff;
+        }
+        
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        #home {
+            background: linear-gradient(rgba(0, 51, 102, 0.7), rgba(0, 51, 102, 0.7)), url('https://i.imgur.com/a2wRXGb.jpg') no-repeat center center;
+            background-size: cover;
+            height: 100vh;
+            color: white;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .hero-content .event-details {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            display: inline-block;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #0081cc;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .btn:hover {
+            background-color: #005c92;
+        }
+        
+        /* About Section */
+        #about {
+            background-color: #f5f5f5;
+        }
+        
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+        
+        .about-image img {
+            max-width: 100%;
+            border-radius: 4px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        /* Symposium Section */
+        #symposium {
+            background-color: white;
+        }
+        
+        .event-card {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .event-image {
+            height: 200px;
+            background: url('/api/placeholder/800/400') no-repeat center center;
+            background-size: cover;
+        }
+        
+        .event-details {
+            padding: 20px;
+        }
+        
+        .event-date {
+            color: #0081cc;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .speaker {
+            display: flex;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+        
+        .speaker-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 15px;
+            background: #eee;
+        }
+        
+        .speaker-info h4 {
+            margin-bottom: 5px;
+        }
+        
+        .schedule-item {
+            padding: 15px;
+            margin-bottom: 15px;
+            border-left: 4px solid #0081cc;
+            background-color: #f5f5f5;
+        }
+        
+        .schedule-time {
+            font-weight: bold;
+            color: #0081cc;
+        }
+        
+        /* Registration Section */
+        #registration {
+            background-color: #e6f2ff;
+            text-align: center;
+        }
+        
+        .registration-cta {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 4px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #003366;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .footer-col {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-col h3 {
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info p {
+            margin-bottom: 10px;
+        }
+        
+        .social-links a {
+            color: white;
+            margin: 0 10px;
+            font-size: 20px;
+        }
+        
+        .copyright {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .symposium-image {
+            max-width: 100%;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            nav ul {
+                position: absolute;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background-color: #003366;
+                flex-direction: column;
+                padding: 20px;
+                display: none;
+            }
+            
+            nav ul.show {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            section {
+                padding: 40px 20px;
+            }
+            
+            #home {
+                height: auto;
+                min-height: 100vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1>TMU-CWRU Symposium</h1>
+            </div>
+            <button class="menu-toggle">☰</button>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#symposium">Symposium</a></li>
+                    <li><a href="#registration">Registration</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section / Home -->
+    <section id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>2025 TMU-CWRU Symposium on Cancer Translational Research</h1>
+                <div class="event-details">
+                    <p><strong>Date:</strong> 27-28th, March, 2025</p>
+                    <p><strong>Location:</strong> Taipei Medical University<br>International Conference Hall, 16F, Comprehensive Medical Building (Rear Building)</p>
+                </div>
+                <a href="symposium-agenda.html" class="btn">View Agenda</a>
+                <a href="#registration" class="btn">Register for Symposium</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About Our Research Center</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>The Research Center of Cancer Translational Medicine (RCCTM) is a cancer research center established by Taipei Medical University.</p>
+                    <p>The RCCTM aims to accelerate the development of new diagnostic tools and therapeutic approaches for cancer, bridging the gap between laboratory research and clinical applications.</p>
+                    <p>Our center focuses on understanding cancer progression mechanisms, metastasis, and the identification of new therapeutic targets and biomarkers. We collaborate with leading international institutions to advance cancer research and improve patient outcomes.</p>
+                    <p>The mission of RCCTM is to enhance cancer research through translational medicine approaches, foster international collaboration, and develop innovative solutions for cancer prevention, detection, and treatment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Symposium Section -->
+    <section id="symposium">
+        <div class="container">
+            <h2>2025 TMU-CWRU Symposium on Cancer Translational Research</h2>
+            
+            <p>The TMU Research Center of Cancer Translational Medicine (RCCTM) and Case Western Reserve University (CWRU) are pleased to announce the 2025 TMU-CWRU Symposium on Cancer Translational Research. This collaborative event brings together leading researchers, clinicians, and industry experts to share cutting-edge advances in cancer translational medicine.</p>
+            
+            <div class="event-card">
+                <div class="event-details">
+                    <div class="event-date">March 27-28, 2025 | Taipei Medical University</div>
+                    
+                    <h3>Symposium Overview</h3>
+                    <p>The symposium will focus on advances in cancer translational research with special emphasis on:</p>
+                    <ul>
+                        <li>Precision medicine approaches in cancer therapy</li>
+                        <li>Novel biomarkers for early cancer detection</li>
+                        <li>Innovative immunotherapy strategies</li>
+                        <li>Artificial intelligence and machine learning in cancer research</li>
+                        <li>Cancer metastasis mechanisms and interventions</li>
+                        <li>Clinical trial design and implementation</li>
+                    </ul>
+                    
+ Western Reserve University</p>
+                            <p><i>Topic: "Metabolic Reprogramming in Cancer: From Bench to Bedside"</i></p>
+                        </div>
+                    </div>
+                    
+                    <h3>Preliminary Schedule</h3>
+                    
+                    <h4>Day 1: March 27, 2025</h4>
+                    <div class="schedule-item">
+                        <p class="schedule-time">09:00 – 09:20</p>
+                        <p>Reception and Registration</p>
+                    </div>
+                    
+                    <div class="schedule-item">
+                        <p class="schedule-time">09:20 – 09:30</p>
+                        <p>Opening Remarks by <a href="https://hub.tmu.edu.tw/">Chun-Che Shih</a> and Hsing-Jien Kung</p>
+                    </div>
+                    
+                    <div class="schedule-item">
+                        <p class="schedule-time">09:30 – 10:10</p>
+                        <p>Keynote Lecture 1: <a href="https://case.edu/">Stanton L. Gerson</a></p>
+                    </div>
+                    
+                    <div class="schedule-item">
+                        <p class="schedule-time">10:10 – 10:50</p>
+                        <p>Keynote Lecture 2: Hsing-Jien Kung</p>
+                    </div>
+                    
+                    <div class="schedule-item">
+                        <p class="schedule-time">10:50 – 11:10</p>
+                        <p>Group Photo and Coffee Break</p>
+                    </div>
+                    
+                    <div class="schedule-item">
+                        <p class="schedule-time">11:10 – 11:40</p>
+                        <p>Wen-Chun Hung</p>
+                    </div>
+                    
+                    <div class="schedule-item">
+                        <p class="schedule-time">11:40 – 12:10</p>
+                        <p><a href="https://hub.tmu.edu.tw/">Yao-An Shen</a></p>
+                    </div>
+                    
+                    <div class="schedule-item">
+                        <p class="schedule-time">12:10 – 13:30</p>
+                        <p>Lunch (Faculty Lounge)</p>
+                    </div>
+                    
+                    <div class="schedule-item">
+                        <p class="schedule-time">13:30 – 14:10</p>
+                        <p>Keynote Lecture 3: <a href="https://case.edu/">William P. Schiemann</a></p>
+                    </div>
+                    
+                    <div class="schedule-item">
+                        <p class="schedule-time">14:10 – 14:50</p>
+                        <p>Keynote Lecture 4: <a href="https://hub.tmu.edu.tw/">Cheng-Wei Lin</a></p>
+                    </div>
+                    
+                    <div class="schedule-item">
+                        <p class="schedule-time">14:50 – 15:10</p>
+                        <p>Coffee Break</p>
+                    </div>
+                    
+                    <div class="schedule-item">
+                        <p class="schedule-time">15:10 – 15:50</p>
+                        <p><a href="https://hub.tmu.edu.tw/">Tsung-I Hsu</a></p>
+                    </div>
+                    
+                    <div class="schedule-item">
+                        <p class="schedule-time">15:50 – 16:30</p>
+                        <p>Yen-Shen Lu</p>
+                    </div>
+                    
+                    <div class="schedule-item">
+                        <p class="schedule-time">16:30 – 17:00</p>
+                        <p>Panel Discussion: <a href="https://case.edu/">Stanton L. Gerson</a>, <a href="https://case.edu/">William P. Schiemann</a>, <a href="https://case.edu/">Zhenghe John Wang</a></p>
+                    </div>
+                    
+                    <div class="schedule-item">
+                        <p class="schedule-time">17:00</p>
+                        <p>Adjourn</p>
+                    </div>
+                    
+                    <div class="schedule-item">
+                        <p class="schedule-time">18:30 – 20:30</p>
+                        <p>Dinner Reception</p>
+                    </div>
+                    
+                    <h4>Day 2: March 28, 2025</h4>
+                    <div class="schedule-item">
+                        <p class="schedule-time">09:00 – 09:25</p>
+                        <p>Registration</p>
+                    </div>
+                    
+                    <div class="schedule-item">
+                        <p class="schedule-time">09:25 – 09:30</p>
+                        <p>Opening Remarks by Kang-Yuan Lee</p>
+                    </div>
+                    
+                    <div class="schedule-item">
+                        <p class="schedule-time">09:30 – 10:10</p>
+                        <p>Keynote Lecture 5: <a href="https://case.edu/">Zhenghe John Wang</a></p>
+                    </div>
+                    
+                    <div class="schedule-item">
+                        <p class="schedule-time">10:10 – 10:50</p>
+                        <p>Keynote Lecture 6: Kwang-Yu Chang</p>
+                    </div>
+                    
+                    <div class="schedule-item">
+                        <p class="schedule-time">10:50 – 11:10</p>
+                        <p>Coffee Break</p>
+                    </div>
+                    
+                    <div class="schedule-item">
+                        <p class="schedule-time">11:10 – 11:40</p>
+                        <p><a href="https://hub.tmu.edu.tw/">Jian-Ying Chuang</a></p>
+                    </div>
+                    
+                    <div class="schedule-item">
+                        <p class="schedule-time">11:40 – 12:10</p>
+                        <p>(Additional agenda items here)</p>
+                    </div>
+                    
+                    <h3>Venue</h3>
+                    <p>The symposium will be held at the International Conference Hall, 16F, Comprehensive Medical Building (Rear Building), Taipei Medical University, Taipei, Taiwan.</p>
+                    
+                    <a href="#registration" class="btn">Register Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section id="registration">
+        <div class="container">
+            <h2>Registration</h2>
+            <p>Register now to attend the 2025 TMU-CWRU Symposium on Cancer Translational Research.</p>
+            
+            <div class="registration-cta">
+                <p>Please complete our online registration form to secure your place at the symposium.</p>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScbWO_VGc7y3qz7YXWOAD6nF7bj102foADF9DLrrpJI8bB8cg/viewform?embedded=true" class="btn" target="_blank">Register via Google Form</a>
+                <p><small>* You will be redirected to our Google Form for registration</small></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>TMU Research Center of Cancer Translational Medicine</h3>
+                    <p>Advancing cancer research through translational medicine and international collaboration</p>
+                </div>
+                
+                <div class="footer-col contact-info">
+                    <h3>Contact Us</h3>
+                    <p>Taipei Medical University</p>
+                    <p>Email: rcctm@tmu.edu.tw</p>
+                    <p>Phone: +886-2-XXXX-XXXX</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <p><a href="#home">Home</a></p>
+                    <p><a href="#about">About</a></p>
+                    <p><a href="#symposium">Symposium</a></p>
+                    <p><a href="#registration">Registration</a></p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 TMU Research Center of Cancer Translational Medicine. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navMenu = document.querySelector('nav ul');
+            
+            menuToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('show');
+            });
+            
+            // Close menu when clicking on a nav link (for mobile)
+            const navLinks = document.querySelectorAll('nav ul li a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    navMenu.classList.remove('show');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
