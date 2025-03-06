@@ -37,6 +37,7 @@ body {
     text-align: center;
 }
 
+
 .sym-container h1 {
     margin-left: 0 auto;
     max-width: 1200px;
@@ -67,7 +68,7 @@ main {
     margin-bottom: 30px;
 }
 
-.schedule-item a {  
+.schedule-item a {
     font-weight: bold;
     text-decoration: underline;
     color: black;
@@ -125,18 +126,92 @@ main {
 }
 
 .schedule-item {
+    display: flex;
     padding: 15px;
     margin-bottom: 15px;
     border-left: 4px solid #0081cc;
     background-color: #f5f5f5;
 }
 
+.schedule-content-wrapper {
+    flex: 0 0 100%;
+    display: flex;
+    padding: 0 20px;
+}
+
+.schedule-content-main {
+    flex: 0 0 60%;
+    padding-right: 20px;
+    border-right: 3px solid #0081cc;
+}
+
+.schedule-content-side {
+    flex: 0 0 40%;
+    padding-left: 20px;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.moderator-title {
+    color: #0081cc;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+    text-transform: uppercase;
+}
+
+.moderator-info {
+    background-color: rgba(0, 129, 204, 0.1);
+    padding: 10px;
+    border-radius: 4px;
+}
+
 .schedule-time {
     font-weight: bold;
     color: #0081cc;
+    font-size: 1.1em;
+    margin-bottom: 10px;
 }
 
+.schedule-item h4 {
+    margin: 0 0 10px 0;
+    color: #333;
+}
 
+.schedule-item p {
+    margin: 5px 0;
+}
+
+.schedule-item a {
+    color: #0081cc;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.schedule-item a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .schedule-content-wrapper {
+        flex-direction: column;
+    }
+
+    .schedule-content-main {
+        flex: 0 0 100%;
+        border-right: none;
+        border-bottom: 2px solid #0081cc;
+        padding-right: 0;
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+    }
+
+    .schedule-content-side {
+        flex: 0 0 100%;
+        padding-left: 0;
+    }
+}
 
 /* Footer */
 footer {
