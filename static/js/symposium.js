@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // 移动端菜单控制
+
     const menuBtn = document.querySelector('.mobile-menu-btn');
     const mainNav = document.querySelector('.main-nav');
 
@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // 平滑滚动
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -25,7 +24,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // 添加滚动动画
     const scheduleItems = document.querySelectorAll('.schedule-item');
 
     const observer = new IntersectionObserver((entries) => {
