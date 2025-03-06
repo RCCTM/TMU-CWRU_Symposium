@@ -202,16 +202,17 @@ body {
 }
 
 .slide-content h2 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: rgb(20, 20, 173);
-    margin-bottom: 20px;
-    ;
+    margin-bottom: 15px;
+    line-height: 1.4;
 }
 
 .slide-content h3 {
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: rgb(0, 0, 0);
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+    line-height: 1.4;
 }
 
 /* btn */
@@ -376,11 +377,13 @@ footer {
     }
 
     .slide-content h2 {
-        font-size: 1.8em;
+        font-size: 1.1rem;
+        margin-bottom: 10px;
     }
 
     .slide-content h3 {
-        font-size: 1.2em;
+        font-size: 0.8rem;
+        margin-bottom: 15px;
     }
 
     .footer-content {
@@ -395,11 +398,11 @@ footer {
 
 @media (max-width: 480px) {
     .slide-content h2 {
-        font-size: 1.5em;
+        font-size: 1rem;
     }
 
     .slide-content h3 {
-        font-size: 1em;
+        font-size: 0.75rem;
     }
 
     .btn {
