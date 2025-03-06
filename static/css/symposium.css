@@ -8,8 +8,8 @@ body {
 
 @font-face {
     font-family: 'Inter';
-    src: url('/static/fonts/inter-100-900.woff') format('woff'),
-        url('/static/fonts/inter-100-900.woff2') format('woff2');
+    src: url('../fonts/inter-100-900.woff') format('woff'),
+        url('../fonts/inter-100-900.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
