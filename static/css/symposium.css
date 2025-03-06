@@ -20,6 +20,13 @@ body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
     color: #333;
+    background-color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 .site-header {
@@ -29,26 +36,31 @@ body {
     width: 100%;
     z-index: 1000;
     background: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .sym-container {
     margin-top: 80px;
     width: 100%;
     text-align: center;
+    padding: 40px 0;
+    background-color: #f5f5f5;
 }
 
-
 .sym-container h1 {
-    margin-left: 0 auto;
+    margin: 0 auto;
     max-width: 1200px;
     padding: 40px 20px;
     font-family: 'Inter', sans-serif;
+    color: #003366;
+    font-size: 2.5em;
 }
 
 main {
     position: relative;
     width: 100%;
-    padding-bottom: 50px;
+    padding: 40px 0;
+    background-color: #fff;
 }
 
 #symposium {
@@ -57,7 +69,6 @@ main {
     padding: 20px;
     background-color: white;
 }
-
 
 .event-card {
     font-family: 'Inter', sans-serif;

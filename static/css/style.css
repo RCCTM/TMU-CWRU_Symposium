@@ -6,8 +6,8 @@
 
 @font-face {
     font-family: 'MyCustomFont';
-    src: url('/static/fonts/inter-100-900.woff') format('woff'),
-        url('/static/fonts/inter-100-900.woff2') format('woff2');
+    src: url('../fonts/inter-100-900.woff') format('woff'),
+        url('../fonts/inter-100-900.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
@@ -229,93 +229,93 @@ body {
     background: darken(var(--accent-color), 10%);
 }
 
- /* Footer */
- footer {
-     background-color: #003366;
-     color: white;
-     padding: 40px 20px;
-     text-align: center;
- }
+/* Footer */
+footer {
+    background-color: #003366;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
 
- .footer-content {
-     max-width: 1200px;
-     margin: 0 auto;
-     display: flex;
-     flex-wrap: wrap;
-     justify-content: space-between;
- }
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
 
- .footer-col {
-     flex: 1;
-     min-width: 250px;
-     margin-bottom: 20px;
- }
+.footer-col {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 20px;
+}
 
- .footer-col h3 {
-     color: white;
-     margin-bottom: 20px;
- }
+.footer-col h3 {
+    color: white;
+    margin-bottom: 20px;
+}
 
- .contact-info p {
-     margin-bottom: 10px;
- }
+.contact-info p {
+    margin-bottom: 10px;
+}
 
- .social-links a {
-     color: white;
-     margin: 0 10px;
-     font-size: 20px;
- }
+.social-links a {
+    color: white;
+    margin: 0 10px;
+    font-size: 20px;
+}
 
- .copyright {
-     margin-top: 30px;
-     padding-top: 20px;
-     border-top: 1px solid rgba(255, 255, 255, 0.1);
- }
+.copyright {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
 
- .symposium-image {
-     max-width: 100%;
-     margin: 20px 0;
-     border-radius: 4px;
- }
+.symposium-image {
+    max-width: 100%;
+    margin: 20px 0;
+    border-radius: 4px;
+}
 
- /* Responsive Design */
- @media (max-width: 768px) {
-     .menu-toggle {
-         display: block;
-     }
+/* Responsive Design */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
 
-     nav ul {
-         position: absolute;
-         top: 80px;
-         left: 0;
-         right: 0;
-         background-color: #003366;
-         flex-direction: column;
-         padding: 20px;
-         display: none;
-     }
+    nav ul {
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background-color: #003366;
+        flex-direction: column;
+        padding: 20px;
+        display: none;
+    }
 
-     nav ul.show {
-         display: flex;
-     }
+    nav ul.show {
+        display: flex;
+    }
 
-     nav ul li {
-         margin: 10px 0;
-     }
+    nav ul li {
+        margin: 10px 0;
+    }
 
-     .hero-content h1 {
-         font-size: 2rem;
-     }
+    .hero-content h1 {
+        font-size: 2rem;
+    }
 
-     section {
-         padding: 40px 20px;
-     }
+    section {
+        padding: 40px 20px;
+    }
 
-     #home {
-         height: auto;
-         min-height: 100vh;
-     }
- }
+    #home {
+        height: auto;
+        min-height: 100vh;
+    }
+}
 
 /* research content */
 .research-section {
