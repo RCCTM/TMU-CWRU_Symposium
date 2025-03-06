@@ -202,14 +202,16 @@ body {
 }
 
 .slide-content h2 {
-    font-size: 1.3rem;
+    /* font-size: 1.3rem; */
+    font-size: 40px;
     color: rgb(20, 20, 173);
     margin-bottom: 15px;
     line-height: 1.4;
 }
 
 .slide-content h3 {
-    font-size: 0.9rem;
+    /* font-size: 0.9rem; */
+    font-size: 1.3em;
     color: rgb(0, 0, 0);
     margin-bottom: 20px;
     line-height: 1.4;
