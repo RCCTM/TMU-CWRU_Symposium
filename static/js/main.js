@@ -1,30 +1,75 @@
 // 導航欄控制
 document.addEventListener('DOMContentLoaded', function () {
-    // 移動端菜單切換
+    // 移動端菜單控制
     const menuBtn = document.querySelector('.mobile-menu-btn');
     const mainNav = document.querySelector('.main-nav');
-
-    menuBtn.addEventListener('click', function () {
-        mainNav.classList.toggle('active');
-        this.classList.toggle('active');
-    });
-
-    // 滾動效果
-    let lastScroll = 0;
     const header = document.querySelector('.site-header');
 
+    if (menuBtn && mainNav) {
+        menuBtn.addEventListener('click', function () {
+            this.classList.toggle('active');
+            mainNav.classList.toggle('active');
+        });
+
+        // 点击菜单项后关闭菜单
+        mainNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuBtn.classList.remove('active');
+                mainNav.classList.remove('active');
+            });
+        });
+
+        // 点击页面其他区域关闭菜单
+        document.addEventListener('click', function (e) {
+            if (!header.contains(e.target) && mainNav.classList.contains('active')) {
+                menuBtn.classList.remove('active');
+                mainNav.classList.remove('active');
+            }
+        });
+    }
+
+    // 滚动时隐藏/显示导航栏
+    let lastScroll = 0;
+    let scrollTimer;
+
     window.addEventListener('scroll', function () {
-        const currentScroll = window.pageYOffset;
+        clearTimeout(scrollTimer);
 
-        if (currentScroll > lastScroll && currentScroll > 100) {
-            // 向下滾動
-            header.style.transform = 'translateY(-100%)';
-        } else {
-            // 向上滾動
-            header.style.transform = 'translateY(0)';
-        }
+        scrollTimer = setTimeout(function () {
+            const currentScroll = window.pageYOffset;
 
-        lastScroll = currentScroll;
+            if (currentScroll > lastScroll && currentScroll > 100) {
+                // 向下滚动
+                header.style.transform = 'translateY(-100%)';
+                if (mainNav.classList.contains('active')) {
+                    menuBtn.classList.remove('active');
+                    mainNav.classList.remove('active');
+                }
+            } else {
+                // 向上滚动
+                header.style.transform = 'translateY(0)';
+            }
+
+            lastScroll = currentScroll;
+        }, 100);
+    });
+
+    // 平滑滚动
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+
+            if (target) {
+                const headerHeight = header.offsetHeight;
+                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+
+                window.scrollTo({
+                    top: targetPosition - headerHeight,
+                    behavior: 'smooth'
+                });
+            }
+        });
     });
 });
 
@@ -92,21 +137,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     lazyImages.forEach(img => imageObserver.observe(img));
-});
-
-// 平滑滾動
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
 });
 
 // 表單驗證
