@@ -1,4 +1,4 @@
-/* 基础样式 */
+/* basic style */
 :root {
     --primary-color: #003366;
     --secondary-color: #0081cc;
@@ -7,7 +7,7 @@
     --border-color: #e0e0e0;
 }
 
-/* 通用样式 */
+/* common style */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -26,9 +26,9 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    overflow: hidden;
 }
 
-/* 头部样式 */
 .site-header {
     position: fixed;
     top: 0;
@@ -46,7 +46,6 @@ body {
     padding: 15px 0;
 }
 
-/* 导航样式 */
 .main-nav ul {
     display: flex;
     list-style: none;
@@ -60,7 +59,7 @@ body {
     transition: color 0.3s;
 }
 
-/* 标题容器 */
+/* title container */
 .sym-container {
     margin-top: 60px;
     padding: 40px 20px;
@@ -69,13 +68,13 @@ body {
 }
 
 .sym-container h1 {
-    font-size: 2.5em;
+    font-size: 2em;
     color: var(--primary-color);
     margin: 0;
     line-height: 1.3;
 }
 
-/* 主要内容区域 */
+/* main content */
 main {
     padding: 40px 0;
 }
@@ -84,7 +83,7 @@ main {
     padding: 20px 0;
 }
 
-/* 活动卡片 */
+/* event card */
 .event-card {
     background: #fff;
     border-radius: 8px;
@@ -115,7 +114,7 @@ main {
     margin-bottom: 25px;
 }
 
-/* 日程表样式 */
+/* schedule style */
 h2 {
     color: var(--primary-color);
     margin: 40px 0 20px;
@@ -136,23 +135,19 @@ h2 {
 }
 
 .schedule-content-wrapper {
-    flex: 0 0 100%;
     display: flex;
-    padding: 0 20px;
+    padding: 20px;
+    gap: 20px;
 }
 
 .schedule-content-main {
-    flex: 0 0 60%;
-    padding-right: 20px;
-    border-right: 3px solid #0081cc;
+    flex: 1;
+    min-width: 0;
 }
 
 .schedule-content-side {
-    flex: 0 0 40%;
-    padding-left: 20px;
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
+    width: 200px;
+    flex-shrink: 0;
 }
 
 .schedule-time {
@@ -198,7 +193,7 @@ h2 {
     border-radius: 4px;
 }
 
-/* 页脚样式 */
+/* footer style */
 .site-footer {
     background: var(--primary-color);
     color: #fff;
@@ -223,7 +218,7 @@ h2 {
     text-align: center;
 }
 
-/* 响应式设计 */
+/* responsive design */
 @media (max-width: 1024px) {
     .container {
         padding: 0 15px;
@@ -240,7 +235,7 @@ h2 {
 
 @media (max-width: 768px) {
 
-    /* 导航栏 */
+    /* navigation bar */
     .mobile-menu-btn {
         display: flex;
         flex-direction: column;
@@ -284,7 +279,7 @@ h2 {
         border-bottom: none;
     }
 
-    /* 标题区域 */
+    /* title area */
     .sym-container {
         margin-top: 50px;
         padding: 30px 15px;
@@ -294,7 +289,7 @@ h2 {
         font-size: 1.8em;
     }
 
-    /* 活动卡片 */
+    /* event card */
     .event-card {
         margin: 20px 0;
     }
@@ -311,7 +306,7 @@ h2 {
         font-size: 1em;
     }
 
-    /* 日程表 */
+    /* schedule */
     h2 {
         font-size: 1.5em;
         margin: 30px 0 15px;
@@ -369,14 +364,22 @@ h2 {
     }
 }
 
+/* agenda container style */
 .agenda-container {
     display: flex;
+    flex-wrap: nowrap;
+    /* prevent line break */
     gap: 30px;
     margin: 40px 0;
+    width: 100%;
 }
 
 .agenda-day {
     flex: 1;
+    min-width: 0;
+    /* prevent content overflow */
+    max-width: calc(50% - 15px);
+    /* ensure not more than half width */
 }
 
 .agenda-day h2 {
@@ -390,15 +393,18 @@ h2 {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    width: 100%;
 }
 
 .schedule-item {
+    width: 100%;
     background: #fff;
     border: 1px solid var(--border-color);
     border-left: 4px solid var(--secondary-color);
     border-radius: 4px;
 }
 
+/* responsive design */
 @media (max-width: 768px) {
     .agenda-container {
         flex-direction: column;
@@ -406,12 +412,8 @@ h2 {
     }
 
     .agenda-day {
+        max-width: 100%;
         width: 100%;
-    }
-
-    .agenda-day h2 {
-        font-size: 1.5em;
-        margin-bottom: 15px;
     }
 }
 
@@ -422,5 +424,9 @@ h2 {
 
     .agenda-day h2 {
         font-size: 1.3em;
+    }
+
+    .schedule-content-wrapper {
+        padding: 10px;
     }
 }
