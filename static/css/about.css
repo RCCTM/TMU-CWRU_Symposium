@@ -1,0 +1,148 @@
+/* 個人資料區塊樣式 */
+.profile-header {
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: flex-start;
+    /* 讓內容靠左對齊 */
+    margin-top: 5rem;
+    /* 使用rem單位，調整為響應式 */
+    padding: 2.5rem 0;
+    /* 使用rem單位，讓間距自適應 */
+}
+
+/* 左側文字內容 */
+.profile-content,
+.contact-info {
+    font-size: 1.1rem;
+    flex: 1;
+    align-items: center;
+    text-align: left;
+    max-width: 50%;
+    /* 限制文字區塊寬度，確保對齊 */
+    margin-left: 20%;
+    /* 減少左側間距 */
+    margin-top: 0;
+}
+
+/* 右側圖片 */
+.profile-image {
+    flex-shrink: 0;
+    /* 防止圖片被壓縮 */
+    margin-right: 25%;
+    /* 減少右側空間，讓圖片貼近文字 */
+    margin-top: 0;
+}
+
+.profile-image img {
+    max-width: 18.75rem;
+    /* 限制圖片最大寬度，使用rem單位 */
+    height: auto;
+}
+
+/* 文字框 */
+.position {
+    font-size: 1.1rem;
+    margin-bottom: 1.25rem;
+    max-width: 70%;
+}
+
+/* contact information */
+.address,
+.contact-details {
+    margin-top: 0.3125rem;
+    /* 使用rem單位 */
+    letter-spacing: 0;
+    line-height: 1.1;
+}
+
+.education {
+    font-size: 1.1rem;
+    flex: 1;
+    align-items: center;
+    text-align: left;
+    max-width: 50%;
+    margin-left: 20%;
+    margin-bottom: 1.25rem;
+    padding-top: 1.85rem;
+}
+
+/* honors section */
+.honors .info-section,
+.publications .info-section {
+    font-size: 1.1rem;
+    flex: 1;
+    align-items: center;
+    text-align: left;
+    max-width: 50%;
+    margin-left: 20%;
+    padding-top: 1.85rem;
+    margin-bottom: 1.25rem;
+}
+
+.info-content h4 {
+    padding-top: 1.85rem;
+    margin-bottom: 1.25rem;
+}
+
+.info-section h3 {
+    margin-bottom: 1.25rem;
+}
+
+/* list */
+.honors-list,
+.publications-list {
+    padding-left: 3rem;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    .profile-header {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .profile-content,
+    .contact-info,
+    .education {
+        max-width: 100%;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .profile-image {
+        margin-right: 0;
+        margin-top: 1rem;
+    }
+
+    .honors .info-section,
+    .publications .info-section {
+        max-width: 100%;
+        margin-left: 0;
+    }
+
+    .honors-list,
+    .publications-list {
+        padding-left: 2rem;
+    }
+}
+
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    .profile-header {
+        flex-direction: column;
+        align-items: center; /* 小螢幕時讓內容置中 */
+        gap: 1.25rem;
+    }
+
+    .profile-content {
+        max-width: 100%;
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .profile-image {
+        margin-right: 0;
+    }
+}
