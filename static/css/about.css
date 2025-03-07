@@ -18,25 +18,26 @@
     align-items: center;
     text-align: left;
     max-width: 50%;
-    /* 限制文字區塊寬度，確保對齊 */
     margin-left: 20%;
-    /* 減少左側間距 */
     margin-top: 0;
 }
 
+
 /* 右側圖片 */
 .profile-image {
-    flex-shrink: 0;
-    /* 防止圖片被壓縮 */
+    flex: 0 0 300px;
     margin-right: 25%;
-    /* 減少右側空間，讓圖片貼近文字 */
+    overflow: hidden;
     margin-top: 0;
 }
 
 .profile-image img {
-    max-width: 18.75rem;
-    /* 限制圖片最大寬度，使用rem單位 */
+    max-width: 100%;
     height: auto;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 /* 文字框 */
@@ -94,11 +95,115 @@
     padding-left: 3rem;
 }
 
-/* 響應式設計 */
+.honors-list li,
+.publications-list li {
+    margin-bottom: 1.25rem;
+}
+
+.profile-content h2 {
+    margin-bottom: 1.25rem;
+}
+
+/* responsive design*/
+@media (max-width: 1400px) {
+    .info-section {
+        max-width: 1200px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .info-section {
+        max-width: 1000px;
+    }
+/* 
+    .profile-header {
+        padding: 30px 60px;
+    } */
+
+    .info-content {
+        max-width: 900px;
+    }
+}
+
+@media (max-width: 992px) {
+    .info-section {
+        max-width: 900px;
+    }
+
+    
+
+    .info-content {
+        max-width: 800px;
+    }
+}
+
 @media (max-width: 768px) {
+    .site-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    .mobile-menu-btn {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        cursor: pointer;
+    }
+
+    .mobile-menu-btn span {
+        width: 24px;
+        height: 2px;
+        background: var(--text-color);
+        transition: 0.3s;
+    }
+
+    .main-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        padding: 10px 0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .main-nav.active {
+        display: block;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+
+    .main-nav li {
+        padding: 10px 0;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .main-nav li:last-child {
+        border-bottom: none;
+    }
+
+    .sym-container {
+        margin-top: 50px;
+        padding: 30px 15px;
+    }
+
+    .sym-container h1 {
+        font-size: 1.8em;
+    }
+
     .profile-header {
         flex-direction: column;
-        align-items: center;
+        padding-left: 1.25rem;
+        max-width: 100%;
         gap: 2rem;
     }
 
@@ -106,43 +211,138 @@
     .contact-info,
     .education {
         max-width: 100%;
-        margin-left: 0;
-        text-align: center;
+        margin-left: 1.25rem;
     }
 
     .profile-image {
-        margin-right: 0;
-        margin-top: 1rem;
+        width: 100%;
+        height: 300px;
+        margin: 20px auto;
+        /* 居中顯示 */
+        max-width: 300px;
+        /* 限制最大寬度 */
+    }
+
+    .position p {
+        margin-left: 0;
+    }
+
+    .education h3,
+    p {
+        margin-left: 1.25rem;
+    }
+
+    .honors h3,
+    .publications h3,
+    .publications .info-content h4,
+    .contact-info h3,
+    p {
+        margin-left: 1.25rem;
     }
 
     .honors .info-section,
     .publications .info-section {
         max-width: 100%;
-        margin-left: 0;
+        align-items: center;
+        margin-left: 1.25rem;
     }
 
-    .honors-list,
-    .publications-list {
+    .honors-list ul,
+    .publications-list ul {
         padding-left: 2rem;
     }
 }
 
-
-/* 響應式設計 */
-@media (max-width: 768px) {
-    .profile-header {
-        flex-direction: column;
-        align-items: center; /* 小螢幕時讓內容置中 */
-        gap: 1.25rem;
+@media (max-width: 576px) {
+    .info-section {
+        max-width: 100%;
+        padding: 15px;
     }
 
-    .profile-content {
-        max-width: 100%;
-        text-align: center;
-        margin-left: 0;
+    .profile-header {
+        padding: 15px;
+    }
+
+    .info-content {
+        padding: 0 10px;
+    }
+
+    .sym-container {
+        margin-top: 45px;
+        padding: 20px 10px;
+    }
+
+    .sym-container h1 {
+        font-size: 1.5em;
+    }
+
+    .main-nav ul {
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .info-section {
+        padding: 10px;
+    }
+
+    .profile-header {
+        padding: 10px;
+    }
+
+    .info-content {
+        padding: 0 5px;
+    }
+
+    .sym-container {
+        padding: 15px 5px;
+    }
+
+    .sym-container h1 {
+        font-size: 1.3em;
+    }
+
+    .main-nav ul {
+        padding: 0 10px;
+    }
+
+    .main-nav li {
+        padding: 8px 0;
     }
 
     .profile-image {
-        margin-right: 0;
+        height: 250px;
     }
+}
+
+@media (max-width: 360px) {
+
+    .info-section,
+    .profile-header {
+        padding: 8px;
+    }
+
+    .info-content {
+        padding: 0 3px;
+    }
+
+    .sym-container {
+        padding: 10px 5px;
+    }
+
+    .sym-container h1 {
+        font-size: 1.2em;
+    }
+
+    .main-nav ul {
+        padding: 0 8px;
+    }
+}
+
+/* 圖片基本約束 */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    /* 防止圖片底部有間隙 */
 }
