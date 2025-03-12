@@ -397,7 +397,8 @@ footer {
     /* 調整 slider 讓內容垂直置中，然後再往上偏移 */
     .hero-slider {
         display: flex;
-        margin-top: 20%;
+        align-items: center;
+        /* 垂直置中 */
         justify-content: center;
         /* 水平置中，如有需要 */
         position: relative;
@@ -405,9 +406,9 @@ footer {
 
     .slide-content {
         text-align: left;
-        padding-left: 20px;
-        padding-top: 10px;
+        padding: 20px;
         transform: translateY(-10%);
+        /* 向上移動10%，依需求調整數值 */
     }
 
     .mobile-menu-btn {
