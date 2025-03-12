@@ -405,5 +405,9 @@ footer {
                 object-fit: cover;
                 /* 保持圖片比例，確保圖片填滿 */
             }
+
+        .slide-content {
+            margin-top: 10%;
+        }
     }
 }
