@@ -94,6 +94,7 @@ body {
     color: var(--primary-color);
     margin: 0;
     line-height: 1.3;
+    padding-bottom: 20px;
 }
 
 /* main content */
@@ -230,94 +231,67 @@ h2 {
     color: var(--secondary-color);
 }
 
-/* responsive design */
-@media (max-width: 1200px) {
-    .container {
-        padding: 0 15px;
+/* 大於 1024px 時，.agenda-day 並排顯示 */
+@media (min-width: 1024px) {
+    .agenda-container {
+        display: flex;
+        gap: 20px;
     }
 
-    .sym-container h1 {
-        font-size: 2.2em;
+    .agenda-day {
+        flex: 1;
+        max-width: calc(50% - 10px);
+        /* 確保兩個 agenda-day 並排顯示 */
     }
 
-    .event-details {
-        padding: 25px;
+    .agenda-day h2 {
+        color: var(--primary-color);
+        margin: 0 0 12px;
+        font-size: 1.8em;
+        text-align: left;
     }
 }
 
+/* 小於 1024px 時，使用垂直顯示 */
 @media (max-width: 1024px) {
-
-    /* navigation bar */
-    .mobile-menu-btn {
-        display: flex;
-        flex-direction: column;
-        gap: 4px;
-        cursor: pointer;
+    .agenda-container {
+        display: block;
+        /* 改為區塊顯示 */
+        gap: 20px;
     }
 
-    .mobile-menu-btn span {
-        width: 24px;
-        height: 2px;
-        background: var(--text-color);
-        transition: 0.3s;
+    .agenda-day {
+        max-width: 100%;
+        /* 確保在小於 1024px 時 agenda-day 顯示為單列 */
+    }
+}
+@media (max-width: 768px) {
+    /* 隱藏主選單，使用漢堡選單 */
+    .main-nav {
+        display: none;
     }
 
 
-    /* title area */
-    .sym-container {
-        margin-top: 50px;
-        padding: 30px 15px;
-    }
-
-    .sym-container h1 {
-        font-size: 1.8em;
-    }
-
-    /* event card */
-    .event-card {
-        margin: 20px 0;
-    }
-
-    .event-details {
-        padding: 20px;
-    }
-
-    .event-details h3 {
-        font-size: 1.1em;
-    }
-
-    .event-details h4 {
-        font-size: 1em;
-    }
-
-    /* schedule */
-    h2 {
-        font-size: 1.5em;
-        margin: 30px 0 15px;
-    }
-
-    .schedule-content-wrapper {
-        flex-direction: column;
-        padding: 15px 15px;
-    }
-
-    .schedule-content-main {
-        margin-bottom: 15px;
-    }
-
-    .schedule-content-side {
+    .main-nav.open {
+        display: block;
+        position: absolute;
+        top: 60px;
+        left: 0;
         width: 100%;
-        border-top: 1px solid var(--border-color);
-        padding-top: 15px;
+        background: white;
+        text-align: center;
     }
 
-    .schedule-time {
-        font-size: 1em;
+    .main-nav.open ul {
+        flex-direction: column;
+        padding: 0;
     }
 
-    .schedule-item h4 {
-        font-size: 1em;
+    .main-nav.open ul li {
+        margin: 15px 0;
     }
+    
+    
 }
 
 @media (max-width: 480px) {
@@ -360,12 +334,37 @@ h2 {
     min-width: 0;
     max-width: calc(50% - 10px);
     }
-    
+
     .agenda-day h2 {
     color: var(--primary-color);
     margin: 0 0 12px;
     font-size: 1.8em;
     text-align: left;
+    }
+
+    /* 隱藏主選單，使用漢堡選單 */
+    .main-nav {
+        display: none;
+    }
+
+
+    .main-nav.open {
+        display: block;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: white;
+        text-align: center;
+    }
+
+    .main-nav.open ul {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .main-nav.open ul li {
+        margin: 15px 0;
     }
 
 }
@@ -388,12 +387,30 @@ h2 {
         padding: 10px 15px;
     }
 
-     .sym-container {
-        margin-top: 10px;
+
+    /* 隱藏主選單，使用漢堡選單 */
+    .main-nav {
+        display: none;
     }
 
-    .event-card {
-        margin-top: 10px;
+
+    .main-nav.open {
+        display: block;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: white;
+        text-align: center;
+    }
+
+    .main-nav.open ul {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .main-nav.open ul li {
+        margin: 15px 0;
     }
 }
 
@@ -410,11 +427,36 @@ h2 {
         padding: 10px;
     }
 
-    .sym-container {
-        margin-top: 10px;
+    .sym-container h1 {
+        padding-top: 20px;
     }
 
     .event-card {
         margin-top: 10px;
+    }
+
+    /* 隱藏主選單，使用漢堡選單 */
+    .main-nav {
+        display: none;
+    }
+
+
+    .main-nav.open {
+        display: block;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: white;
+        text-align: center;
+    }
+
+    .main-nav.open ul {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .main-nav.open ul li {
+        margin: 15px 0;
     }
 }

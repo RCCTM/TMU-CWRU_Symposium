@@ -287,18 +287,44 @@ footer {
         padding: 0 20px;
     }
 
+    .main-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        padding: 10px 0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        /* 加入過渡效果 */
+    }
+
+    .main-nav.active {
+        display: block;
+        animation: slideDown 0.3s ease-out;
+        /* 動畫效果，從上滑入 */
+    }
+
     .main-nav ul {
-        gap: 15px;
+        display: flex;
+        flex-direction: column;
+        padding: 0 20px;
     }
 
-    .main-nav ul li a {
-        font-size: 16px;
+    .main-nav li {
+        padding: 10px 0;
+        border-bottom: 1px solid var(--border-color);
     }
 
-    /* slider */
+    .main-nav li:last-child {
+        border-bottom: none;
+    }
 
+    /* Slider 設置 */
     .slide-content {
-       margin-left: 10%;
+        margin-left: 10%;
+        padding-top: 30px;
     }
 
     .hero-slider {
@@ -308,60 +334,102 @@ footer {
     }
 
     .slide-content h2 {
-        font-size: 30px;
+        font-size: 32px;
+        margin-top: -20px;
+        /* 稍微增大字體 */
     }
 
     .slide-content h3 {
-        font-size: 20px;
+        font-size: 22px;
+        /* 稍微增大字體 */
     }
 
-    /* 按鈕縮小 */
-    .btn {
-        padding: 8px 15px;
-        font-size: 14px;
-        
-    }
-
-}
-
-/* 小於 1024px (手機) */
-@media (max-width: 768px) {
-
-    /* 隱藏主選單，使用漢堡選單 */
-    .main-nav {
-        display: none;
-    }
-
+    /* Hamburger 菜單 */
     .mobile-menu-btn {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        /* 增加間隙 */
+        width: 50px;
+        height: 40px;
         cursor: pointer;
+        z-index: 1000;
     }
 
     .mobile-menu-btn span {
         display: block;
-        width: 30px;
-        height: 3px;
-        background: #333;
-        margin: 6px 0;
-    }
-
-    .main-nav.open {
-        display: block;
-        position: absolute;
-        top: 60px;
-        left: 0;
         width: 100%;
-        background: white;
-        text-align: center;
+        height: 4px;
+        background-color: var(--text-color);
+        transition: all 0.3s ease;
+        border-radius: 2px;
+        /* 增加圓角 */
     }
 
-    .main-nav.open ul {
+    .mobile-menu-btn.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .mobile-menu-btn.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .mobile-menu-btn.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+/* 添加從上方滑入的動畫 */
+@keyframes slideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* 小於 1024px (手機) */
+@media (max-width: 768px) {
+
+    .mobile-menu-btn {
+        display: flex;
         flex-direction: column;
-        padding: 0;
+        justify-content: space-around;
+        align-items: center;
+        width: 40px;
+        /* 稍微增加按鈕寬度 */
+        height: 35px;
+        /* 提高高度，讓按鈕更易於點擊 */
+        cursor: pointer;
+        z-index: 1000;
+        padding: 6px;
+        /* 增加內邊距 */
     }
 
-    .main-nav.open ul li {
-        margin: 15px 0;
+    .mobile-menu-btn span {
+        display: block;
+        width: 100%;
+        height: 4px;
+        /* 增加線條寬度 */
+        background-color: var(--text-color);
+        transition: all 0.3s ease;
+        border-radius: 3px;
+        /* 增加圓角 */
+    }
+
+    .mobile-menu-btn.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .mobile-menu-btn.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .mobile-menu-btn.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
     }
 
     /* Hero 圖片調整 */
@@ -374,40 +442,50 @@ footer {
     .slide-content {
         text-align: left;
         padding: 20px;
+        
+    }
+
+    .slide-content h2 {
+        font-size: 26px;
+        /* 增大標題文字 */
+    }
+
+    .slide-content h3 {
+        font-size: 18px;
+        /* 增大副標題文字 */
+    }
+
+    .btn {
+        padding: 10px 15px;
+        /* 增加按鈕大小，讓它更顯眼 */
+        font-size: 14px;
+        /* 增加按鈕文字大小 */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-slider {
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+    }
+
+    .slide-content {
+        margin-top: 50px;
     }
 
     .slide-content h2 {
         font-size: 22px;
+        /* 稍微減小文字大小，適應小螢幕 */
     }
 
     .slide-content h3 {
         font-size: 16px;
+        /* 調整副標題文字大小 */
     }
 
     .btn {
         padding: 8px 12px;
-        font-size: 13px;
-    }
-
-    .hero-slider {
-        width: 100%;
-        height: 100vh;
-        /* 讓圖片填滿視窗高度 */
-        object-fit: cover;
-        /* 保持圖片比例，確保圖片填滿 */
-    }
-
-    @media (max-width: 480px) {
-        .hero-slider {
-                width: 100%;
-                height: 100vh;
-                /* 讓圖片填滿視窗高度 */
-                object-fit: cover;
-                /* 保持圖片比例，確保圖片填滿 */
-            }
-
-        .slide-content {
-            margin-top: 10%;
-        }
+        font-size: 12px;
     }
 }
