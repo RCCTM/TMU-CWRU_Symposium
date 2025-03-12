@@ -265,33 +265,26 @@ h2 {
         /* 確保在小於 1024px 時 agenda-day 顯示為單列 */
     }
 }
+/* 響應式調整：手機尺寸 (max-width: 768px) */
 @media (max-width: 768px) {
-    /* 隱藏主選單，使用漢堡選單 */
-    .main-nav {
-        display: none;
+    .slide-content {
+        top: 15%;
+        /* 在手機上可讓內容更靠上 */
+        padding: 15px;
     }
 
-
-    .main-nav.open {
-        display: block;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background: white;
-        text-align: center;
+    .slide-content h2 {
+        font-size: 1.8em;
     }
 
-    .main-nav.open ul {
-        flex-direction: column;
-        padding: 0;
+    .slide-content h3 {
+        font-size: 1.2em;
     }
 
-    .main-nav.open ul li {
-        margin: 15px 0;
+    .btn {
+        padding: 10px 20px;
+        font-size: 14px;
     }
-    
-    
 }
 
 @media (max-width: 480px) {
