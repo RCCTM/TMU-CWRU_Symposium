@@ -267,24 +267,23 @@ h2 {
 }
 /* 響應式調整：手機尺寸 (max-width: 768px) */
 @media (max-width: 768px) {
-    .slide-content {
-        top: 15%;
-        /* 在手機上可讓內容更靠上 */
-        padding: 15px;
-    }
-
-    .slide-content h2 {
-        font-size: 1.8em;
-    }
-
-    .slide-content h3 {
-        font-size: 1.2em;
-    }
-
-    .btn {
-        padding: 10px 20px;
-        font-size: 14px;
-    }
+  .slide-content {
+    top: 15%; /* 在手機上可讓內容更靠上 */
+    padding: 15px;
+  }
+  
+  .slide-content h2 {
+    font-size: 1.8em;
+  }
+  
+  .slide-content h3 {
+    font-size: 1.2em;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
 }
 
 @media (max-width: 480px) {
