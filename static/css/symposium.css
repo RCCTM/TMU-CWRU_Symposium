@@ -265,10 +265,10 @@ h2 {
         /* 確保在小於 1024px 時 agenda-day 顯示為單列 */
     }
 }
-/* 響應式調整：手機尺寸 (max-width: 768px) */
+/* 手機尺寸 (max-width: 768px) */
 @media (max-width: 768px) {
   .slide-content {
-    top: 15%; /* 在手機上可讓內容更靠上 */
+    top: 20%; 
     padding: 15px;
   }
   
@@ -294,7 +294,7 @@ h2 {
 
     .sym-container h1 {
         font-size: 1.5em;
-        padding-top: 20px;
+        padding-top: 40px;
     }
 
     .event-details {
@@ -407,7 +407,7 @@ h2 {
     }
 
     .sym-container h1 {
-        padding-top: 20px;
+        padding-top: 40px;
     }
 }
 
@@ -425,7 +425,7 @@ h2 {
     }
 
     .sym-container h1 {
-        padding-top: 30px;
+        padding-top: 40px;
     }
 
     .event-card {
