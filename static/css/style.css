@@ -394,23 +394,25 @@ footer {
 /* 小於 1024px (手機) */
 @media (max-width: 768px) {
 
-    /* 調整 slider 讓內容垂直置中，然後再往上偏移 */
+    /* 將 slider 內容水平置中，垂直靠上 */
     .hero-slider {
         display: flex;
-        align-items: center;
-        /* 垂直置中 */
+        align-items: flex-start;
+        /* 從上方開始排列 */
         justify-content: center;
-        /* 水平置中，如有需要 */
+        /* 水平置中 */
         position: relative;
     }
 
+    /* 如需微調 slide-content 距離頂部的距離，可添加 margin-top */
     .slide-content {
         text-align: left;
         padding: 20px;
-        transform: translateY(-10%);
-        /* 向上移動10%，依需求調整數值 */
+        margin-top: 50px;
+        /* 調整此值來控制 slide-content 與頂部的距離 */
     }
 
+    /* 其他設定保持不變 */
     .mobile-menu-btn {
         display: flex;
         flex-direction: column;
