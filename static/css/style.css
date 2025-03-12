@@ -399,20 +399,20 @@ footer {
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
-        width: 40px;
-        /* 稍微增加按鈕寬度 */
-        height: 35px;
-        /* 提高高度，讓按鈕更易於點擊 */
+        width: 50px;
+        /* 調整寬度，讓按鈕更大 */
+        height: 45px;
+        /* 調整高度，讓按鈕更大 */
         cursor: pointer;
         z-index: 1000;
-        padding: 6px;
+        padding: 8px;
         /* 增加內邊距 */
     }
 
     .mobile-menu-btn span {
         display: block;
         width: 100%;
-        height: 4px;
+        height: 5px;
         /* 增加線條寬度 */
         background-color: var(--text-color);
         transition: all 0.3s ease;
@@ -421,7 +421,8 @@ footer {
     }
 
     .mobile-menu-btn.active span:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
+        transform: translateY(10px) rotate(45deg);
+        /* 微調位置 */
     }
 
     .mobile-menu-btn.active span:nth-child(2) {
@@ -429,7 +430,8 @@ footer {
     }
 
     .mobile-menu-btn.active span:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
+        transform: translateY(-10px) rotate(-45deg);
+        /* 微調位置 */
     }
 
     /* Hero 圖片調整 */
@@ -442,23 +444,26 @@ footer {
     .slide-content {
         text-align: left;
         padding: 20px;
-        
     }
 
     .slide-content h2 {
-        font-size: 26px;
-        /* 增大標題文字 */
+        font-size: 28px;
+        /* 增大標題字型 */
+        margin-top: -20px;
+        /* 往上移動標題 */
     }
 
     .slide-content h3 {
-        font-size: 18px;
-        /* 增大副標題文字 */
+        font-size: 20px;
+        /* 增大副標題字型 */
+        margin-top: -15px;
+        /* 往上移動副標題 */
     }
 
     .btn {
-        padding: 10px 15px;
-        /* 增加按鈕大小，讓它更顯眼 */
-        font-size: 14px;
+        padding: 12px 18px;
+        /* 增加按鈕大小 */
+        font-size: 16px;
         /* 增加按鈕文字大小 */
     }
 }
