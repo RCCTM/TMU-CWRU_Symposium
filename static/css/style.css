@@ -15,7 +15,7 @@
 :root {
     --primary-color: #003366;
     --secondary-color: #0066cc;
-    --accent-color: #001aff;
+    --accent-color: #192ee8;
     --text-color: #333;
     --light-gray: #f5f5f5;
     --dark-gray: #666;
@@ -58,7 +58,7 @@
 }
 
 body {
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Inter', sans-serif;
     line-height: 1.6;
     color: var(--text-color);
 }
@@ -226,11 +226,13 @@ body {
     text-decoration: none;
     border-radius: 5px;
     transition: background 0.3s ease;
+    margin-top: 15px;
+    margin-right: 20px;
 }
 
-.btn:hover {
+/* .btn:hover {
     background: darken(var(--accent-color), 10%);
-}
+} */
 
 /* Footer */
 footer {
@@ -353,7 +355,7 @@ footer {
         background-color: var(--light-gray);
     }
 
-    /* 调整页面内容，防止被固定导航栏遮挡 */
+
     body {
         padding-top: 60px;
     }

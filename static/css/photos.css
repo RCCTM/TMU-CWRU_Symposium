@@ -1,0 +1,52 @@
+.profile-image-hsing-jien-kung {
+    flex: 0 0 200px;
+    max-width: 200px;
+    margin-right: 25%;
+    overflow: hidden;
+}
+/* responsive design*/
+@media (max-width: 1400px) {
+    
+}
+
+@media (max-width: 1200px) {
+
+}
+
+@media (max-width: 992px) {
+
+}
+
+@media (max-width: 768px) {
+
+    .profile-image {
+        width: 100%;
+        height: 300px;
+        margin: 20px auto;
+        max-width: 300px;
+    }
+
+}
+
+@media (max-width: 576px) {
+   
+}
+
+@media (max-width: 480px) {
+
+    .profile-image {
+        height: 250px;
+    }
+}
+
+@media (max-width: 360px) {
+
+}
+
+/* 圖片基本約束 */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    /* 防止圖片底部有間隙 */
+}
