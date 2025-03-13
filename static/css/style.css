@@ -22,21 +22,6 @@
     --white: #ffffff;
 }
 
-/* 背景圖片設置
-.hero-section {
-    position: relative;
-    height: 100vh;
-    background-image: url('../images/homepage-2.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-} */
-
-@media (max-width: 768px) {
-    .hero-section {
-        background-image: url('https://i0.wp.com/tmurcctm.org/wp-content/uploads/2025/01/cropped-homepage.jpg?fit=32%2C32&ssl=1');
-    }
-}
 
 .hero-section::before {
     content: '';
@@ -239,33 +224,32 @@ footer {
     background-color: #003366;
     color: white;
     padding: 40px 20px;
-    text-align: center;
+    text-align: left;
 }
-
 .footer-content {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    
 }
 
-.footer-col {
+.footer-info {
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+}
+
+.footer-content-1,
+.footer-content-2 {
+    padding-bottom: 20px;
     flex: 1;
-    min-width: 250px;
-    margin-bottom: 20px;
+    min-width: 200px;
 }
 
-.footer-col h3 {
-    color: white;
-    margin-bottom: 20px;
-}
 
-.copyright {
-    margin-top: 30px;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
 
 .symposium-image {
     max-width: 100%;
@@ -281,6 +265,8 @@ footer {
 }
 
 @media (max-width: 1024px) {
+
+    
     .container {
         max-width: 100%;
         padding: 0 20px;
@@ -384,4 +370,18 @@ footer {
     .mobile-menu-btn.active span:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        background-image: url('https://i0.wp.com/tmurcctm.org/wp-content/uploads/2025/01/cropped-homepage.jpg?fit=32%2C32&ssl=1');
+    }
+    
+
+    .footer-content-1,
+    .footer-content-2 {
+        width: 48%; /* 兩個區塊佔據 48% 寬度，並在中間留出間隙 */
+    }
+
+
 }
