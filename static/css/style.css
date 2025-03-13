@@ -376,11 +376,17 @@ footer {
     .hero-section {
         background-image: url('https://i0.wp.com/tmurcctm.org/wp-content/uploads/2025/01/cropped-homepage.jpg?fit=32%2C32&ssl=1');
     }
-    
+
+    /* .footer-content-1,
+    .footer-content-2 {
+        width: 48%; 
+    } */
 
     .footer-content-1,
-    .footer-content-2 {
-        width: 48%; /* 兩個區塊佔據 48% 寬度，並在中間留出間隙 */
+    .footer-content-2,
+    .footer-content-3 {
+        font-size: 10px;
+        
     }
 
 
