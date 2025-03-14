@@ -300,7 +300,6 @@ footer {
         border-bottom: none;
     }
 
-    /* 讓 `Home` 和 `Symposium` 在關閉狀態時仍顯示 */
     .main-nav li:first-child,
     .main-nav li:nth-child(2) {
         display: block;
