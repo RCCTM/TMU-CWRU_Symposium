@@ -1,0 +1,388 @@
+/* profile header */
+.profile-header {
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 5rem;
+    padding: 2.5rem 0;
+}
+
+/* profile content */
+.profile-content,
+.contact-info {
+    font-size: 1.1rem;
+    flex: 1;
+    align-items: center;
+    text-align: left;
+    max-width: 50%;
+    margin-left: 20%;
+    margin-top: 0;
+}
+
+
+/* profile image */
+.profile-image {
+    flex: 0 0 300px;
+    margin-right: 25%;
+    overflow: hidden;
+    margin-top: 0;
+}
+
+
+.profile-image img {
+    max-width: 100%;
+    height: auto;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* position */
+.position {
+    font-size: 1.1rem;
+    margin-bottom: 1.25rem;
+    max-width: 70%;
+}
+
+.position ul {
+    font-size: 1.1rem;
+    margin-bottom: 1.25rem;
+    max-width: 100%;
+}
+/* contact information */
+.address,
+.contact-details {
+    margin-top: 0.3125rem;
+    letter-spacing: 0;
+    line-height: 1.1;
+}
+
+.education {
+    font-size: 1.1rem;
+    flex: 1;
+    align-items: center;
+    text-align: left;
+    max-width: 50%;
+    margin-left: 20%;
+    margin-bottom: 1.25rem;
+    padding-top: 1.85rem;
+}
+
+/* table */
+.address {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.address th,
+.address td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.address th {
+    background-color: #f2f2f2;
+}
+
+
+
+
+
+/* honors section */
+.honors .info-section,
+.publications .info-section {
+    font-size: 1.1rem;
+    flex: 1;
+    align-items: center;
+    text-align: left;
+    max-width: 50%;
+    margin-left: 20%;
+    padding-top: 1.85rem;
+    margin-bottom: 1.25rem;
+}
+
+.info-content h4, 
+.info-section p {
+    padding-top: 1.85rem;
+    margin-bottom: 1.25rem;
+    text-align: justify;
+}
+
+
+.research-interests .info-content p { 
+   font-size: 1.1rem;
+    flex: 1;
+    align-items: center;
+    text-align: justify;
+    max-width: 50%;
+    margin-left: 20%;
+    margin-bottom: 1.25rem;
+    padding-top: 1.85rem;
+}
+
+
+.info-section h3,
+.research-interests .info-section h3 {
+    margin-bottom: 1.25rem;
+}
+
+/* list */
+.honors-list,
+.publications-list,
+.position ul {
+    padding-left: 3rem;
+}
+
+.honors-list li,
+.publications-list li {
+    margin-bottom: 1.25rem;
+}
+
+.profile-content h2 {
+    margin-bottom: 1.25rem;
+}
+
+/* responsive design*/
+@media (max-width: 1400px) {
+    .info-section {
+        max-width: 1200px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .info-section {
+        max-width: 1000px;
+    }
+/* 
+    .profile-header {
+        padding: 30px 60px;
+    } */
+
+    .info-content {
+        max-width: 900px;
+    }
+}
+
+@media (max-width: 992px) {
+    .info-section {
+        max-width: 900px;
+    }
+
+    
+
+    .info-content {
+        max-width: 800px;
+    }
+}
+
+@media (max-width: 768px) {
+    .site-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    .mobile-menu-btn {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        cursor: pointer;
+    }
+
+    .mobile-menu-btn span {
+        width: 24px;
+        height: 2px;
+        background: var(--text-color);
+        transition: 0.3s;
+    }
+
+    .main-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        padding: 10px 0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .main-nav.active {
+        display: block;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+
+    .main-nav li {
+        padding: 10px 0;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .main-nav li:last-child {
+        border-bottom: none;
+    }
+
+    .sym-container {
+        margin-top: 50px;
+        padding: 30px 15px;
+    }
+
+    .sym-container h1 {
+        font-size: 1.8em;
+    }
+
+    .profile-header {
+        flex-direction: column;
+        padding-left: 1.25rem;
+        max-width: 100%;
+        gap: 2rem;
+    }
+
+    .profile-content,
+    .contact-info,
+    .education {
+        max-width: 100%;
+        margin-left: 1.25rem;
+    }
+
+    .profile-image {
+        width: 100%;
+        height: 300px;
+        margin: 20px auto;
+        max-width: 300px;
+    }
+
+    .position p,
+    .position ul {
+        margin-left: 0;
+    }
+
+    .education h3,
+    p {
+        margin-left: 1.25rem;
+    }
+
+    .honors h3,
+    .publications h3,
+    .publications .info-content h4,
+    .contact-info h3,
+    p {
+        margin-left: 1.25rem;
+    }
+
+    .honors .info-section,
+    .publications .info-section {
+        max-width: 100%;
+        align-items: center;
+        margin-left: 1.25rem;
+    }
+
+    .honors-list ul,
+    .publications-list ul
+    .position ul {
+        padding-left: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .info-section {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .profile-header {
+        padding: 15px;
+    }
+
+    .info-content {
+        padding: 0 10px;
+    }
+
+    .sym-container {
+        margin-top: 45px;
+        padding: 20px 10px;
+    }
+
+    .sym-container h1 {
+        font-size: 1.5em;
+    }
+
+    .main-nav ul {
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .info-section {
+        padding: 10px;
+    }
+
+    .profile-header {
+        padding: 10px;
+    }
+
+    .info-content {
+        padding: 0 5px;
+    }
+
+    .sym-container {
+        padding: 15px 5px;
+    }
+
+    .sym-container h1 {
+        font-size: 1.3em;
+    }
+
+    .main-nav ul {
+        padding: 0 10px;
+    }
+
+    .main-nav li {
+        padding: 8px 0;
+    }
+
+    .profile-image {
+        height: 250px;
+    }
+}
+
+@media (max-width: 360px) {
+
+    .info-section,
+    .profile-header {
+        padding: 8px;
+    }
+
+    .info-content {
+        padding: 0 3px;
+    }
+
+    .sym-container {
+        padding: 10px 5px;
+    }
+
+    .sym-container h1 {
+        font-size: 1.2em;
+    }
+
+    .main-nav ul {
+        padding: 0 8px;
+    }
+}
+
+/* 圖片基本約束 */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    /* 防止圖片底部有間隙 */
+}
